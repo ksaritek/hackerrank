@@ -70,7 +70,17 @@ import (
  */
 
 func jumpingOnClouds(c []int32) int32 {
-	return 0
+	var jumps int32 = 0
+	var i int32 = 0
+	for i < int32(len(c)-1) {
+		if i+2 < int32(len(c)) && c[i+2] == 0 {
+			i += 2
+		} else {
+			i++
+		}
+		jumps++
+	}
+	return jumps
 }
 
 func main() {
